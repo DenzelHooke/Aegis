@@ -1,0 +1,21 @@
+{
+  "name": "aegis",
+  "version": "1.0.0",
+  "description": "Microservice overseer backend ",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "server": "node dist/server.js ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "denzelhoke",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^5.6.1",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.2"
+  },
+  "type": "module"
+}
