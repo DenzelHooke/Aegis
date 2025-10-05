@@ -1,17 +1,14 @@
 // Require the framework and instantiate it
 
-// ESM
 import Fastify from 'fastify'
+import HelloWorldRoute from "./routes/helloworldroute.js"
 
 const fastify = Fastify({
   logger: true
 })
 
-// Declare a route
-fastify.get('/', function (req, res) {
-  res.send({ hello: 'world' })
-})
-
+fastify.register(HelloWorldRoute)
+                
 // Run the server!
 fastify.listen({ port: 3000 }, function (err, address) {
   if (err) {
