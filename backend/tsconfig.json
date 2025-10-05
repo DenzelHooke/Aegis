@@ -109,5 +109,8 @@
   "include": [
   "src/**/*.ts",
   "bin/*.ts"
-    ]
+    ],
+  "ts-node": {
+  "swc": true
+  }
 }
