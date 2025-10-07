@@ -1,8 +1,18 @@
 import dotenv from "dotenv"
-dotenv.config({path: "./src/.env", debug:true})
+import { envHandler } from "./helpers/errorHandlers"
+import { resolve } from "path"
 
-export const env = {
+// Resolve path to .env file at the project root
+const envPath = resolve(process.cwd(), ".env")
+console.log(process.cwd())
+
+// Load enviroment variables
+dotenv.config({path: envPath, debug:true})
+
+
+export let env = {      
     NODE_ENV: process.env.NODE_ENV ?? "dev",
-    PORT: Number(process.env.PORT),
-    // ADD OTHER .env params later
+    PORT: Number(process.env.PORT ?? 3000)
 }
+
+console.log("Loaded .env from: ", envPath)
